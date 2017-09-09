@@ -1,0 +1,63 @@
+#!/bin/bash
+pacmngdl(){
+	read -p "Do you want to continue? [Y/n] " want
+	if [ "$want" == "Y" ] || [ "$want" == "y" ];then
+		sudo apt update
+		sudo apt install sl cowsay figlet gem ruby 
+	else
+		echo "Abort." ; exit
+	fi
+	sleep 3
+	clear
+}
+clear
+echo -e """
+To run the program, we need to install the listed tools :
+\t sl , cowsay , figlet , gem , ruby 
+"""
+sudo cp math.1.gz /usr/share/man/man1/math.1.gz && echo "Creating man page ..."
+if [ "$?" == "0" ];then
+	echo "Man Page Created! type 'man math'"
+else
+	echo "Failed Creating man page!"
+fi
+id | grep sudo  > /dev/null
+sudo=$?
+chmod +x math
+if [ $sudo = "0" ];then
+	pacmngdl
+	checkdl=$?
+	if [ "$checkdl" = "0" ];then
+		echo -e "\t\tall programms are installed successfully!!!"
+		echo "Now the programms should be added without any problem!!"
+		if [ "$sudo" = "0" ];then  #If Its == Ture , You Are Sudo
+			sudo gem install colorize
+			sudo gem install timeout
+			sudo cp math /bin
+			sudo chmod +x /bin/math
+		else 
+			echo "you need to install 'colorize' which needs root access!!! contact your system admin"
+			echo -e "use this command to install!!!\n\t sudo gem install colorize "
+			PATH=$PATH:$PWD
+			export PATH
+			echo "$PATH" >> ~/.bashrc
+		fi
+		echo "the programm was installed successfully"
+		echo "you can use the 'math' command whenever you need to use the program"
+	else
+		if [ "$checkdl" = "100" ] ; then
+			echo "Make sure you have a working connection and your your repositories are up to date"
+			exit
+		else
+			echo "Unknow ERROR!!!!"
+			echo "you should first install the programms, then add math to your commands and then recall math"
+		fi
+	fi
+else
+	echo "you are not a sudo user. ask your administrator to install these programms or make you a sudo user!!!"
+	echo "sl , cowsay , figlet , gem , ruby"
+	echo "And type this command :gem install colorie timout '"
+fi
+echo "Have Fun!!!"
+## Github.com/dearmad/Math_Game/
+## Installer Coded By Https://Pouya-abbasian
