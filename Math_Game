@@ -46,8 +46,6 @@ loop do
                    print "#{x} + #{y} ==> "
                    one = gets.chomp.to_i
                    if n == one
-                     record = record+10
-                     puts record
                      puts "\nTrue!\n".white
                    else
                      puts "\nFalse!\n".red
