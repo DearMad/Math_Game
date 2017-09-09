@@ -3,8 +3,7 @@
 This is a game with math written to ruby & bash programming language for support(revival) your calculation. 
 
 ### On Ubuntu Base & Debian Base
-```
-bash
+```bash
 git clone https://github.com/DearMad/Math_Game.git
 sudo apt install ruby
 cd Math_Game ; chmod +x installer
