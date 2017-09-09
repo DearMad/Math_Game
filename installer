@@ -1,0 +1,14 @@
+#!/usr/bin/ruby
+system "reset"
+puts "To run the program, we need to install the listed tools :
+      \t\nsl , gem , cowsay , colorize , figlet , timeout"
+print "\nDo you want to continue? [Y/n] "
+want = gets.chomp
+if want == 'Y' || want == 'y'
+  system "sudo apt update ; sudo apt install gem cowsay colorize figlet timeout"
+  system "sudo gem update"
+  system "sudo gem install colorize"
+  system "sudo gem install timeout"
+else
+  puts "Abort."
+end

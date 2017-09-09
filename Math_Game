@@ -1,0 +1,190 @@
+#!/usr/bin/ruby
+# Dear Mad | Gcs-Team
+# t.me/Dear_Mad | github.com/Dear-Mad | instagram.com/saman_mlk__
+# gomnamsec.iran94@gmail.com | samanmalekian021@gmail.com
+require 'colorize'
+require 'timeout'
+system "sl ; reset"
+print "Whats Your Name ? "
+name = gets.chomp
+system "cowsay Hello #{name}"
+puts "Oky Lets Go #{name}"
+record = 100
+loop do
+  class Application
+  def initialize
+    mainMenu
+  end
+
+  def navigateTo(what)
+    what.new(v).display
+    mainMenu
+  end
+
+  def mainMenu
+      puts "
+      1: add
+      2: multiply
+      3: exit".yellow
+      print "\n==> "
+      case gets.strip
+        when "1"
+          puts "
+      a: Easy
+      b: Normal
+      c: Hard".yellow
+          print "\n==> "
+           case gets.strip
+           when "a"
+             timeout_in_seconds = 60
+             begin
+               Timeout::timeout(timeout_in_seconds) do
+                 loop do
+                   x = rand 1..100
+                   y = rand 1..100
+                   n = x+y
+                   print "#{x} + #{y} ==> "
+                   one = gets.chomp.to_i
+                   if n == one
+                     record = record+10
+                     puts record
+                     puts "\nTrue!\n".white
+                   else
+                     puts "\nFalse!\n".red
+                   end
+                 end
+               end
+             rescue Timeout::Error
+               puts ""
+               system "figlet Finish !"
+             end
+           when "b"
+             timeout_in_seconds = 30
+             begin
+               Timeout::timeout(timeout_in_seconds) do
+                 loop do
+                   x = rand 1..100
+                   y = rand 1..200
+                   n = x+y
+                   print "#{x} + #{y} ==> "
+                   one = gets.chomp.to_i
+                   if n == one
+                     puts "\nTrue!\n".white
+                   else
+                     puts "\nFalse!\n".red
+                   end
+                 end
+               end
+             rescue Timeout::Error
+               puts ""
+               system "figlet Finish !"
+             end
+           when "c"
+             timeout_in_seconds = 15
+             begin
+               Timeout::timeout(timeout_in_seconds) do
+                 loop do
+                   x = rand 1..500
+                   y = rand 1..1000
+                   n = x+y
+                   print "#{x} + #{y} ==> "
+                   one = gets.chomp.to_i
+                   if n == one
+                     puts "\nTrue!\n".white
+                   else
+                     puts "\nFalse!\n".red
+                   end
+                 end
+               end
+             rescue Timeout::Error
+               puts ""
+               system "figlet Finish !"
+             end
+           else
+             puts "Error!".red
+           end
+        when "2"
+          puts "
+      a: Easy
+      b: Normal
+      c: Hard".yellow
+          print "\n==> "
+           case gets.strip
+           when "a"
+             timeout_in_seconds = 60
+             begin
+               Timeout::timeout(timeout_in_seconds) do
+                 loop do
+                   x = rand 1..100
+                   y = rand 1..100
+                   n = x*y
+                   print "#{x} x #{y} ==> "
+                   one = gets.chomp.to_i
+                   if n == one
+                     puts "\nTrue!\n".white
+                   else
+                     puts "\nFalse!\n".red
+                   end
+                 end
+               end
+             rescue Timeout::Error
+               puts ""
+               system "figlet Finish !"
+             end
+           when "b"
+             timeout_in_seconds = 30
+             begin
+               Timeout::timeout(timeout_in_seconds) do
+                 loop do
+                   x = rand 1..100
+                   y = rand 1..200
+                   n = x*y
+                   print "#{x} x #{y} ==> "
+                   one = gets.chomp.to_i
+                   if n == one
+                     puts "\nTrue!\n".white
+                   else
+                     puts "\nFalse!\n".red
+                   end
+                 end
+               end
+             rescue Timeout::Error
+               puts ""
+               system "figlet Finish !"
+             end
+           when "c"
+             timeout_in_seconds = 15
+             begin
+               Timeout::timeout(timeout_in_seconds) do
+                 loop do
+                   x = rand 1..500
+                   y = rand 1..1000
+                   n = x*y
+                   print "#{x} x #{y} ==> "
+                   one = gets.chomp.to_i
+                   if n == one
+                     puts "\nTrue!\n".white
+                   else
+                     puts "\nFalse!\n".red
+                   end
+                 end
+               end
+             rescue Timeout::Error
+               puts ""
+               system "figlet Finish !"
+             end
+           else
+             puts "Error!".red
+           end
+        when "3"
+          puts ""
+          system "reset"
+          system "figlet Good Bye !"
+          exit!
+        else
+          puts "Error !".red
+        end
+end
+  Application.new
+end
+end
