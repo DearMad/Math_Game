@@ -8,5 +8,8 @@ git clone https://github.com/DearMad/Math_Game.git
 sudo apt install ruby
 cd Math_Game ; chmod +x installer
 ./installer.
+for unistall: 
+chmod +x uninstaller
+./uninstaller
 ```
 thanks to https://github.com/pouya-abbasian & All Members Of gCs-TM
