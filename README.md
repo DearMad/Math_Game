@@ -14,4 +14,4 @@ cd Math_Game ; chmod +x installer
 chmod +x uninstaller
 ./uninstaller
 ```
-thanks to https://github.com/pouya-abbasian & All Members Of gCs-TM
+thanks to https://github.com/pouya-abbasian & All Members Of gCs-TM...
